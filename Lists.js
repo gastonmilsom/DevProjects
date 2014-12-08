@@ -2,9 +2,16 @@ var list = {
 	value: 1, rest: {
 		value: 2, rest: {
 			value: 3, rest: null
-			}
 		}
 	}
+}
+
+var listObject = {
+	value1: true,
+	value2: 1,
+	value3: "Test String",
+	value4: undefined
+}
 
 
 function printList(list) {
@@ -45,11 +52,19 @@ function addToHead(list, newValue) {
 	return listHead;
 }
 	
+function nameObectProperties(obj, objName) {
+	var result = "";
+	for (var i in obj) {
+		if (obj.hasOwnProperty(i)) {
+			result += objName + "." + i + " = " + obj[i] + "\n";
+		}
+	}
+	return result;
+}
 
+console.log(nameObectProperties(list, "List"));
+console.log(nameObectProperties(listObject, "ListObject"));
 
-console.log(arrayToListB2FWhile([10,20,30, 40]));
-list = addToHead(list, 10);
-console.log(list);
 
 		
 
