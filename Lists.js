@@ -44,7 +44,15 @@ function addToHead(list, newValue) {
 	listHead = {value: newValue, rest: list};
 	return listHead;
 }
-	
+
+function nth(listPosition, list) {
+	var listPointer = list;
+	for(var i=0; i<listPosition; i++) {
+		listPointer = listPointer.rest;
+		if (listPointer == null) break;
+	}
+	return listPointer;
+}
 
 
 console.log(arrayToListB2FWhile([10,20,30, 40]));
