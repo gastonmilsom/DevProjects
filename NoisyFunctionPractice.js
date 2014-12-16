@@ -9,26 +9,24 @@ function noisy(f) {
 
 //noisy(Boolean)(0);
 
-console.log("\n",sum(1));
-//console.log("\n",sumT(2)(3)(4)(5));
-
 
 
 function sum(a) { //why does this function stop executing? Is it just because there are no more arguments to process?
 	var sum = a;
 	function f(b) {
 		sum += b;
+		//console.log( sum );
 		return f;
 	};
-	f.toString = function() {return sum;}
+	//console.log( sum );
+	f.getSum = function()  { return sum}
+	f.toString = function() {return sum;}        // what is the point of this?
 	return f;
 }
 
-function sumT(a) {
-	var sum = a;
-	function f(b) {
-		sum += b;
-		return f;
-	};
-	return sum;
-}
+console.log( sum(1).getSum() );
+
+var nextSum = sum(1);
+console.log(  nextSum(2) );
+console.log( nextSum.getSum() );
+
