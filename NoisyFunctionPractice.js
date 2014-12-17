@@ -9,7 +9,7 @@ function noisy(f) {
 
 //noisy(Boolean)(0);
 
-console.log("\n",sum(1));
+console.log("\n",sum(1)(2));
 //console.log("\n",sumT(2)(3)(4)(5));
 
 
@@ -20,6 +20,7 @@ function sum(a) { //why does this function stop executing? Is it just because th
 		sum += b;
 		return f;
 	};
+	console.log(sum);
 	f.toString = function() {return sum;}
 	return f;
 }
