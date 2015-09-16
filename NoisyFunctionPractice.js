@@ -9,10 +9,7 @@ function noisy(f) {
 
 //noisy(Boolean)(0);
 
-
 console.log("\n",sum(1)(2));
-
-
 
 
 function sum(a) { //why does this function stop executing? Is it just because there are no more arguments to process?
@@ -34,4 +31,3 @@ console.log( sum(1).getSum() );
 var nextSum = sum(1);
 console.log(  nextSum(2) );
 console.log( nextSum.getSum() );
-
